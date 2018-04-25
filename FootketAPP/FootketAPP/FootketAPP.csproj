@@ -105,21 +105,45 @@
     <PackageReference Include="MvvmLight">
       <Version>5.4.1</Version>
     </PackageReference>
+    <PackageReference Include="SQLite.Net-PCL">
+      <Version>3.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="WinUX.Common">
+      <Version>2.4.17005.1</Version>
+    </PackageReference>
+    <PackageReference Include="WinUX.UWP">
+      <Version>2.4.17005.1</Version>
+    </PackageReference>
+    <PackageReference Include="WinUX.UWP.MvvmLight">
+      <Version>2.4.17005.1</Version>
+    </PackageReference>
+    <PackageReference Include="WinUX.UWP.Xaml">
+      <Version>2.4.17005.1</Version>
+    </PackageReference>
+    <PackageReference Include="WinUX.UWP.Xaml.Controls">
+      <Version>2.4.17005.1</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <PRIResource Include="Strings\en-us\Resources.resw" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activation\ActivationHandler.cs" />
+    <Compile Include="Helpers\Database.cs" />
+    <Compile Include="Models\UserModel.cs" />
     <Compile Include="Services\ActivationService.cs" />
     <Compile Include="Activation\DefaultLaunchActivationHandler.cs" />
     <Compile Include="Services\NavigationServiceEx.cs" />
     <Compile Include="ViewModels\LoginPageViewModel.cs" />
+    <Compile Include="ViewModels\RegisterPageViewModel.cs" />
     <Compile Include="ViewModels\ShellNavigationItem.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="ViewModels\ViewModelLocator.cs" />
     <Compile Include="Views\LoginPagePage.xaml.cs">
       <DependentUpon>LoginPagePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RegisterPagePage.xaml.cs">
+      <DependentUpon>RegisterPagePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ShellPage.xaml.cs">
       <DependentUpon>ShellPage.xaml</DependentUpon>
@@ -160,6 +184,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\RegisterPagePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\ShellPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -175,9 +203,10 @@
     <Compile Include="Helpers\Singleton.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\logo.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -196,6 +225,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="Microsoft.VCLibs, Version=14.0">
+      <Name>Visual C++ 2015 Runtime for Universal Windows Platform Apps</Name>
+    </SDKReference>
+    <SDKReference Include="Microsoft.VCLibs.Desktop, Version=14.0">
+      <Name>Visual C++ 2015 UWP Desktop Runtime for native apps</Name>
+    </SDKReference>
+    <SDKReference Include="Microsoft.VCLibs.Desktop.110, Version=14.0">
+      <Name>Visual C++ 2012 UWP Desktop Runtime for native apps</Name>
+    </SDKReference>
+    <SDKReference Include="Microsoft.VCLibs.Desktop.120, Version=14.0">
+      <Name>Visual C++ 2013 UWP Desktop Runtime for native apps</Name>
+    </SDKReference>
+    <SDKReference Include="SQLite.UAP.2015, Version=3.8.11.1">
+      <Name>SQLite for Universal App Platform</Name>
+    </SDKReference>
+    <SDKReference Include="Syncfusion Controls for UWP XAML, Version=15.1.0.37">
+      <Name>Syncfusion Controls for UWP XAML</Name>
+    </SDKReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

@@ -18,7 +18,10 @@ namespace FootketAPP.ViewModels
             SimpleIoc.Default.Register(() => new NavigationServiceEx());
             SimpleIoc.Default.Register<ShellViewModel>();
             Register<LoginPageViewModel, LoginPagePage>();
+            Register<RegisterPageViewModel, RegisterPagePage>();
         }
+
+        public RegisterPageViewModel RegisterPageViewModel => ServiceLocator.Current.GetInstance<RegisterPageViewModel>();
 
         public LoginPageViewModel LoginPageViewModel => ServiceLocator.Current.GetInstance<LoginPageViewModel>();
 

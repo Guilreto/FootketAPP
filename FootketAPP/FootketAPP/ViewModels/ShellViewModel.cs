@@ -178,6 +178,7 @@ namespace FootketAPP.ViewModels
             // Or to use an IconElement instead of a Symbol see https://github.com/Microsoft/WindowsTemplateStudio/blob/master/docs/projectTypes/navigationpane.md
             // Edit String/en-US/Resources.resw: Add a menu item title for each page
             _primaryItems.Add(new ShellNavigationItem("Shell_LoginPage".GetLocalized(), Symbol.Document, typeof(LoginPageViewModel).FullName));
+            _primaryItems.Add(new ShellNavigationItem("Shell_RegisterPage".GetLocalized(), Symbol.Document, typeof(RegisterPageViewModel).FullName));
         }
 
         private void ItemSelected(HamburgerMenuItemInvokedEventArgs args)
